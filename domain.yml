@@ -1,0 +1,54 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_name
+  - ask_abilities
+  - ask_time
+  - ask_date
+  - math_add
+  - math_subtract
+  - math_multiply
+  - math_divide
+  - ask_weather
+  - search_query
+  - unknown
+
+entities:
+  - city
+  - query
+
+slots:
+  city:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: city
+
+  query:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: query
+
+responses:
+  utter_greet:
+    - text: "Привет! Как я могу помочь?"
+
+  utter_goodbye:
+    - text: "Пока! Хорошего дня!"
+
+  utter_ask_name:
+    - text: "Я бот-помощник! Спроси меня что-нибудь."
+
+  utter_ask_abilities:
+    - text: "Я умею показывать погоду, время, делать расчёты и искать в Google."
+
+actions:
+  - action_get_time
+  - action_get_date
+  - action_calculate
+  - action_get_weather
+  - action_web_search
+  - action_sentiment_response
