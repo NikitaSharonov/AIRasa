@@ -1,4 +1,0 @@
-"# ArtInt" 
-"# ArtIntTextblobAndSpacy" 
-"# ArtIntRASA" 
-"# AIRasa" 
