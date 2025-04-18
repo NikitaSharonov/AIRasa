@@ -13,7 +13,7 @@ from rasa_sdk.executor import CollectingDispatcher
 
 nlp = spacy.load("ru_core_news_sm")
 translator = Translator()
-API_KEY = "9303b20b05c95a33fed3ef81df34f36f"
+API_KEY = "апи_ключ"
 
 def lemmatize_text(text):
     doc = nlp(text)
