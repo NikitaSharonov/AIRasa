@@ -1,0 +1,81 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Привет
+    - Здравствуй
+    - Добрый день
+    - Хай
+
+- intent: goodbye
+  examples: |
+    - Пока
+    - До встречи
+    - Увидимся
+    - До свидания
+
+- intent: ask_name
+  examples: |
+    - Как тебя зовут?
+    - Кто ты?
+    - Как звать?
+    - Ты кто?
+
+- intent: ask_abilities
+  examples: |
+    - Что ты умеешь?
+    - Что ты можешь?
+    - На что ты способен?
+
+- intent: ask_time
+  examples: |
+    - Который час?
+    - Сколько времени?
+    - Сейчас время?
+
+- intent: ask_date
+  examples: |
+    - Какое сегодня число?
+    - Какая дата?
+    - Какой сегодня день?
+
+- intent: math_add
+  examples: |
+    - Сложи 5 + 7
+    - 3 + 4
+    - 12.5 + 3.2
+
+- intent: math_subtract
+  examples: |
+    - Вычти 10 - 4
+    - 7 - 3
+
+- intent: math_multiply
+  examples: |
+    - Перемножь 5 * 6
+    - 4 * 8
+
+- intent: math_divide
+  examples: |
+    - Раздели 8 / 2
+    - 10 / 5
+
+- intent: ask_weather
+  examples: |
+    - Какая погода в [Москва](city)?
+    - Как там в [Казань](city)?
+    - Что с погодой в [Сочи](city)?
+    - Погода в [Париж](city)
+
+- intent: search_query
+  examples: |
+    - поищи [новости про ИИ](query)
+    - найди [погоду на завтра](query)
+    - гугли [курс доллара](query)
+
+- intent: unknown
+  examples: |
+    - я счастлив
+    - не знаю, что спросить
+    - мне грустно
