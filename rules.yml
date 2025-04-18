@@ -1,0 +1,75 @@
+version: "3.1"
+
+rules:
+- rule: Приветствие
+  steps:
+    - intent: greet
+    - action: action_sentiment_response
+    - action: utter_greet
+
+- rule: Прощание
+  steps:
+    - intent: goodbye
+    - action: action_sentiment_response
+    - action: utter_goodbye
+
+- rule: Имя
+  steps:
+    - intent: ask_name
+    - action: action_sentiment_response
+    - action: utter_ask_name
+
+- rule: Навыки
+  steps:
+    - intent: ask_abilities
+    - action: action_sentiment_response
+    - action: utter_ask_abilities
+
+- rule: Погода
+  steps:
+    - intent: ask_weather
+    - action: action_sentiment_response
+    - action: action_get_weather
+
+- rule: Время
+  steps:
+    - intent: ask_time
+    - action: action_sentiment_response
+    - action: action_get_time
+
+- rule: Дата
+  steps:
+    - intent: ask_date
+    - action: action_sentiment_response
+    - action: action_get_date
+
+- rule: Математика сложение
+  steps:
+    - intent: math_add
+    - action: action_calculate
+
+- rule: Математика вычитание
+  steps:
+    - intent: math_subtract
+    - action: action_calculate
+
+- rule: Математика умножение
+  steps:
+    - intent: math_multiply
+    - action: action_calculate
+
+- rule: Математика деление
+  steps:
+    - intent: math_divide
+    - action: action_calculate
+
+- rule: Поиск
+  steps:
+    - intent: search_query
+    - action: action_sentiment_response
+    - action: action_web_search
+
+- rule: дефолт
+  steps:
+    - intent: unknown
+    - action: action_sentiment_response
