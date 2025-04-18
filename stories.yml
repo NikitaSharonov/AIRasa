@@ -1,0 +1,67 @@
+version: "3.1"
+
+stories:
+
+- story: приветствие и имя
+  steps:
+    - intent: greet
+    - action: action_sentiment_response
+    - action: utter_greet
+    - intent: ask_name
+    - action: action_sentiment_response
+    - action: utter_ask_name
+
+- story: узнать время
+  steps:
+    - intent: ask_time
+    - action: action_sentiment_response
+    - action: action_get_time
+
+- story: узнать дату
+  steps:
+    - intent: ask_date
+    - action: action_sentiment_response
+    - action: action_get_date
+
+- story: возможности бота
+  steps:
+    - intent: ask_abilities
+    - action: action_sentiment_response
+    - action: utter_ask_abilities
+
+- story: погода
+  steps:
+    - intent: ask_weather
+    - action: action_sentiment_response
+    - action: action_get_weather
+
+- story: простая арифметика сложение
+  steps:
+    - intent: math_add
+    - action: action_calculate
+
+- story: простая арифметика вычитание
+  steps:
+    - intent: math_subtract
+    - action: action_calculate
+
+- story: простая арифметика умножение
+  steps:
+    - intent: math_multiply
+    - action: action_calculate
+
+- story: простая арифметика деление
+  steps:
+    - intent: math_divide
+    - action: action_calculate
+
+- story: поиск в интернете
+  steps:
+    - intent: search_query
+    - action: action_sentiment_response
+    - action: action_web_search
+
+- story: что то другое
+  steps:
+    - intent: unknown
+    - action: action_sentiment_response
