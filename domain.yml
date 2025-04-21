@@ -17,7 +17,6 @@ intents:
 
 entities:
   - city
-  - query
 
 slots:
   city:
@@ -25,12 +24,6 @@ slots:
     mappings:
       - type: from_entity
         entity: city
-
-  query:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: query
 
 responses:
   utter_greet:
