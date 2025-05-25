@@ -1,15 +1,20 @@
 version: "3.1"
 
 stories:
-
-- story: приветствие и имя
+- story: пользователь здоровается и говорит имя
   steps:
     - intent: greet
-    - action: action_sentiment_response
-    - action: utter_greet
-    - intent: ask_name
-    - action: action_sentiment_response
-    - action: utter_ask_name
+    - action: action_load_user_memory
+    - intent: inform_name
+      entities:
+        - name: Никита
+    - action: action_save_user_memory
+
+- story: прощание
+  steps:
+  - intent: goodbye
+  - action: action_set_last_seen
+  - action: action_sentiment_response
 
 - story: узнать время
   steps:
@@ -23,7 +28,7 @@ stories:
     - action: action_sentiment_response
     - action: action_get_date
 
-- story: возможности бота
+- story: узнать возможности
   steps:
     - intent: ask_abilities
     - action: action_sentiment_response
@@ -35,33 +40,43 @@ stories:
     - action: action_sentiment_response
     - action: action_get_weather
 
-- story: простая арифметика сложение
+- story: арифметика сложение
   steps:
     - intent: math_add
     - action: action_calculate
 
-- story: простая арифметика вычитание
+- story: арифметика вычитание
   steps:
     - intent: math_subtract
     - action: action_calculate
 
-- story: простая арифметика умножение
+- story: арифметика умножение
   steps:
     - intent: math_multiply
     - action: action_calculate
 
-- story: простая арифметика деление
+- story: арифметика деление
   steps:
     - intent: math_divide
     - action: action_calculate
 
-- story: поиск в интернете
+- story: поиск
   steps:
     - intent: search_query
     - action: action_sentiment_response
     - action: action_web_search
 
-- story: что то другое
+- story: неизвестный запрос
   steps:
     - intent: unknown
     - action: action_sentiment_response
+
+- story: время последнего взаимодействия
+  steps:
+    - intent: ask_last_seen
+    - action: action_tell_last_seen
+
+- story: сохранение имени
+  steps:
+    - intent: inform_name
+    - action: action_save_user_memory
