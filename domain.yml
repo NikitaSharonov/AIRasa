@@ -14,9 +14,12 @@ intents:
   - ask_weather
   - search_query
   - unknown
+  - inform_name
+  - ask_last_seen
 
 entities:
   - city
+  - name
 
 slots:
   city:
@@ -25,13 +28,20 @@ slots:
       - type: from_entity
         entity: city
 
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: name
+
+  favorite_topic:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
 responses:
-  utter_greet:
-    - text: "Привет! Как я могу помочь?"
-
-  utter_goodbye:
-    - text: "Пока! Хорошего дня!"
-
   utter_ask_name:
     - text: "Я бот-помощник! Спроси меня что-нибудь."
 
@@ -45,3 +55,11 @@ actions:
   - action_get_weather
   - action_web_search
   - action_sentiment_response
+  - action_load_user_memory
+  - action_save_user_memory
+  - action_set_last_seen
+  - action_tell_last_seen
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
