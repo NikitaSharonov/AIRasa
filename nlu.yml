@@ -5,8 +5,6 @@ nlu:
   examples: |
     - Привет
     - Здравствуй
-    - Добрый день
-    - Хай
 
 - intent: goodbye
   examples: |
@@ -44,7 +42,6 @@ nlu:
   examples: |
     - Сложи 5 + 7
     - 3 + 4
-    - 12.5 + 3.2
 
 - intent: math_subtract
   examples: |
@@ -79,10 +76,21 @@ nlu:
     - поищи где находится Япония
     - найди смысл жизни
     - гугли python tutorials
-    - найди как сделать оригами
 
 - intent: unknown
   examples: |
     - я счастлив
     - не знаю, что спросить
     - мне грустно
+
+- intent: inform_name
+  examples: |
+    - меня зовут [Никита](name)
+    - я [Никита](name)
+
+- intent: ask_last_seen
+  examples: |
+    - когда я заходил?
+    - когда мы общались?
+    - когда я был тут последний раз?
+    - когда я в последний раз писал?
